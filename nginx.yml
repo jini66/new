@@ -1,0 +1,7 @@
+---
+ - hosts: myServers
+    become: yes
+    tasks:
+ - name: Installs Nginx web server
+    apt: pkg=nginx state=installed update_cache notify:
+                                        - start nginx
